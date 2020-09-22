@@ -1,7 +1,10 @@
-<div class="content">
-  <div class="card highlight-card">
-    <span>{{ title }} app is running</span>
-  </div>
+<div class="app-container">
+  <input #text (keyup.enter)="setValue(text.value)" />
+  <button (click)="setValue(text.value)">Click</button>
+
+  <app-slider [valueFromParent]="value" (clickEvent)="sliderOneClicked($event)"></app-slider>
+  <app-slider [valueFromParent]="value" (clickEvent)="sliderTwoClicked($event)"></app-slider>
+  <app-slider [valueFromParent]="value" (clickEvent)="sliderThreeClicked($event)"></app-slider>
 </div>
 
 <router-outlet></router-outlet>
