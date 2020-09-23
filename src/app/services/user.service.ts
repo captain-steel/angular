@@ -10,8 +10,9 @@ import { UserResponse } from '../models/user-response.model';
 export class UserService {
   constructor(private http: HttpClient) {}
 
+  // get a specific number of users from the REST api
   getUsers(studentsNumber: number): Observable<UserResponse> {
-    // return this.http.get<UserResponse>('https://randomuser.me/api/?results=' + studentsNumber);
+    // return this.http.get<UserResponse>(environment.apiUrl + '?results=' + studentsNumber);
     return this.http.get<UserResponse>(`${environment.apiUrl}?results=${studentsNumber}`);
   }
 }

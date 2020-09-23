@@ -1,3 +1,6 @@
+// this models were generated using https://app.quicktype.io/
+// using the json output of https://randomuser.me/api/?results=7
+
 export interface UserResponse {
   results: Result[];
   info: Info;
