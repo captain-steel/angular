@@ -13,7 +13,7 @@ export class StudentsComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.userService.getUsers(10).subscribe((userResponse) => {
+    this.userService.getUsers(7).subscribe((userResponse) => {
       this.usersList = userResponse.results;
     });
   }
@@ -22,6 +22,10 @@ export class StudentsComponent implements OnInit {
     this.userService.getUsers(+studentsNumber).subscribe((userResponse) => {
       this.usersList = userResponse.results;
     });
+  }
+
+  deleteStudent(studentEmail: string) {
+    // TODO remove the student from the 'usersList'
   }
 
   canBeShown(user: Result) {

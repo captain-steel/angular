@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Result } from 'src/app/models/user-response.model';
 
 @Component({
@@ -9,4 +9,11 @@ import { Result } from 'src/app/models/user-response.model';
 export class StudentComponent {
   @Input()
   student: Result;
+
+  @Output()
+  studentDeleted = new EventEmitter<string>();
+
+  deleteStudent() {
+    this.studentDeleted.emit(this.student.email);
+  }
 }

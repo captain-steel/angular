@@ -7,7 +7,7 @@
 <div class="students-container">
   <div *ngFor="let user of usersList" class="student-item">
     <div *ngIf="canBeShown(user)">
-      <app-student [student]="user"></app-student>
+      <app-student [student]="user" (studentDeleted)="deleteStudent($event)"></app-student>
     </div>
   </div>
 </div>
