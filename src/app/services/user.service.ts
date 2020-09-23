@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { UserResponse } from '../models/user-response.model';
 
 @Injectable({
@@ -9,7 +10,8 @@ import { UserResponse } from '../models/user-response.model';
 export class UserService {
   constructor(private http: HttpClient) {}
 
-  getUsers(): Observable<UserResponse> {
-    return this.http.get<UserResponse>('https://randomuser.me/api/?results=5');
+  getUsers(studentsNumber: number): Observable<UserResponse> {
+    // return this.http.get<UserResponse>('https://randomuser.me/api/?results=' + studentsNumber);
+    return this.http.get<UserResponse>(`${environment.apiUrl}?results=${studentsNumber}`);
   }
 }

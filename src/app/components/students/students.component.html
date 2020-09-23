@@ -1,13 +1,15 @@
 <div class="students-number">
   <div>Students number to generate</div>
-  <input minlength="1" maxlength="2" size="2" required />
-  <button class="randomize">Randomize</button>
+  <input #students (keyup.enter)="generateStudents(students.value)" minlength="1" maxlength="2" size="2" required />
+  <button (click)="generateStudents(students.value)" class="randomize">Randomize</button>
 </div>
 
 <div class="students-container">
   <div *ngFor="let user of usersList" class="student-item">
-    <div class="student-name">{{ user.name.first }}</div>
-    <div>{{ user.registered.date | date: 'dd/MM/yyyy' }}</div>
-    <img [src]="user.picture.large" />
+    <div *ngIf="canBeShown(user)">
+      <div class="student-name">{{ user.name.first }}</div>
+      <div>{{ user.registered.date | date: 'yyyy/dd/mm' }}</div>
+      <img [src]="user.picture.large" />
+    </div>
   </div>
 </div>

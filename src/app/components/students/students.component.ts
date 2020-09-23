@@ -13,8 +13,26 @@ export class StudentsComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.userService.getUsers().subscribe((userResponse) => {
+    this.userService.getUsers(10).subscribe((userResponse) => {
       this.usersList = userResponse.results;
     });
+  }
+
+  generateStudents(studentsNumber: string) {
+    this.userService.getUsers(+studentsNumber).subscribe((userResponse) => {
+      this.usersList = userResponse.results;
+    });
+  }
+
+  canBeShown(user: Result) {
+    // if (user.nat === 'FR') {
+    //   return true;
+    // }
+    // return false;
+
+    return true;
+
+    // equivalent
+    // return user.nat === 'FR';
   }
 }
