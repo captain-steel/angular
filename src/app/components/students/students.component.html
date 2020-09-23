@@ -1,5 +1,5 @@
-<div>
-  <div *ngFor="let student of studentsList">
+<div class="students-container">
+  <div *ngFor="let student of studentsList" class="student-item">
     <div>{{ student.name }}</div>
     <div>{{ student.age }} ans</div>
     <img [src]="student.picture" />
