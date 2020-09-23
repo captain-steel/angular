@@ -1,31 +1,20 @@
-import { Component } from '@angular/core';
-import { Student } from '../../models/student.model';
+import { Component, OnInit } from '@angular/core';
+import { Result } from 'src/app/models/user-response.model';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-students',
   templateUrl: './students.component.html',
   styleUrls: ['./students.component.scss']
 })
-export class StudentsComponent {
-  studentsList: Student[];
+export class StudentsComponent implements OnInit {
+  usersList: Result[];
 
-  constructor() {
-    this.studentsList = [
-      {
-        name: 'Aurélie',
-        age: 22,
-        picture: 'https://randomuser.me/api/portraits/women/63.jpg'
-      },
-      {
-        name: 'Gerard',
-        age: 21,
-        picture: 'https://randomuser.me/api/portraits/men/20.jpg'
-      },
-      {
-        name: 'Stéphanie',
-        age: 29,
-        picture: 'https://randomuser.me/api/portraits/women/11.jpg'
-      }
-    ];
+  constructor(private userService: UserService) {}
+
+  ngOnInit(): void {
+    this.userService.getUsers().subscribe((userResponse) => {
+      this.usersList = userResponse.results;
+    });
   }
 }
