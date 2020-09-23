@@ -1,0 +1,5 @@
+<div [ngClass]="{ 'student-female': student.gender === 'female', 'student-male': student.gender === 'male' }">
+  <div class="student-name">{{ student.name.first }}</div>
+  <div>{{ student.registered.date | date: 'yyyy/dd/mm' }}</div>
+  <img [src]="student.picture.large" />
+</div>

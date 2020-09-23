@@ -7,9 +7,7 @@
 <div class="students-container">
   <div *ngFor="let user of usersList" class="student-item">
     <div *ngIf="canBeShown(user)">
-      <div class="student-name">{{ user.name.first }}</div>
-      <div>{{ user.registered.date | date: 'yyyy/dd/mm' }}</div>
-      <img [src]="user.picture.large" />
+      <app-student [student]="user"></app-student>
     </div>
   </div>
 </div>
