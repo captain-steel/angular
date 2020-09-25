@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { StudentDetailsComponent } from './components/student-details/student-details.component';
 import { StudentsComponent } from './components/students/students.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' }, // localhost:4200 redirects to localhost:4200/home
   { path: 'home', component: HomeComponent }, // localhost:4200/home
   { path: 'students', component: StudentsComponent }, // localhost:4200/students
+  { path: 'students/:email', component: StudentDetailsComponent }, // localhost:4200/students/wassim.azirar@gmail.com
   { path: '**', component: NotFoundComponent } // localhost:4200/blabla anything else
 ];
 

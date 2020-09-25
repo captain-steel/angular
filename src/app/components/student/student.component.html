@@ -12,6 +12,6 @@
   <img mat-card-image [src]="student.picture.large" />
   <mat-card-actions>
     <button mat-button (click)="deleteStudent()">DELETE</button>
-    <button mat-button>DETAILS</button>
+    <button mat-button [routerLink]="['/students/', student.email]">DETAILS</button>
   </mat-card-actions>
 </mat-card>

@@ -16,9 +16,10 @@ import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { StudentComponent } from './components/student/student.component';
 import { StudentsComponent } from './components/students/students.component';
+import { StudentDetailsComponent } from './components/student-details/student-details.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, StudentsComponent, NotFoundComponent, StudentComponent],
+  declarations: [AppComponent, HomeComponent, StudentsComponent, NotFoundComponent, StudentComponent, StudentDetailsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

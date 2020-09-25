@@ -15,4 +15,9 @@ export class UserService {
     // return this.http.get<UserResponse>(environment.apiUrl + '?results=' + studentsNumber);
     return this.http.get<UserResponse>(`${environment.apiUrl}?results=${studentsNumber}`);
   }
+
+  // get a specific user by it's email
+  getUserByEmail(email: string): Observable<UserResponse> {
+    return this.http.get<UserResponse>(`${environment.apiUrl}?email=${email}`);
+  }
 }
