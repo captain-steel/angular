@@ -33,9 +33,11 @@ export class StudentsComponent implements OnInit {
     });
   }
 
-  // deletes a student from constructed list from the API
+  // deletes a student in the constructed list from the API
   deleteStudent(studentEmail: string) {
-    // TODO remove the student from the 'usersList'
+    // remove the student from the 'usersList'
+    var filteredStudents = this.usersList.filter((student) => student.email !== studentEmail);
+    this.usersList = filteredStudents;
   }
 
   // decide if we can show a user or not
