@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' }, // localhost:4200 redirects to localhost:4200/home
   { path: 'home', component: HomeComponent }, // localhost:4200/home
   { path: 'students', component: StudentsComponent }, // localhost:4200/students
-  { path: 'students/:email', component: StudentDetailsComponent }, // localhost:4200/students/wassim.azirar@gmail.com
+  { path: 'students/:email', component: StudentDetailsComponent }, // localhost:4200/students/captain.steel@gmail.com
   { path: '**', component: NotFoundComponent } // localhost:4200/blabla anything else
 ];
 
